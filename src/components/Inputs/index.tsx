@@ -6,7 +6,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     isPassword?: boolean;
 }
 
-export const InputProps = ({ isPassword = false }: InputProps) => {
+export const InputComponent = ({ isPassword = false }: InputProps) => {
 
     const [type, setType] = useState<string>("password");
 
@@ -16,9 +16,11 @@ export const InputProps = ({ isPassword = false }: InputProps) => {
 
     if (isPassword) {
         return (
-            <div>
-                <input type={type} />
-                <button onClick={verificarSenha} className="ml-2 p-1 bg-gray-200 rounded">
+            <div className="w-[90%] h-[54px] mt-2 mb-2 border rounded-sm overflow-hidden relative">
+                <input type={type} className="w-full h-full pl-3 outline-none"/>
+                <button 
+                    onClick={verificarSenha} 
+                    className="h-full bg-transparent absolute top-0 right-3 ml-2 p-1 ">
                     VER
                 </button>
             </div>
@@ -26,8 +28,8 @@ export const InputProps = ({ isPassword = false }: InputProps) => {
     }
 
     return (
-        <div>
-            <input type="text" />
+        <div className="w-[90%] h-[54px] mt-2 mb-2 border rounded-sm overflow-hidden relative">
+            <input type="text" className="w-full h-full pl-3 outline-none"/>
         </div>
     )
 }
