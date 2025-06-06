@@ -10,7 +10,7 @@ export const Tela = ({ children }: ChildrenProps) => {
 
 export const TeclaContainer = ({ children }: ChildrenProps) => {
     return (
-        <div className="w-[100vw] min-h-[100vh] flex items-center justify-center">
+        <div className="w-[100vw] min-h-[100vh] flex flex-col items-center justify-center">
            { children}
         </div>
     );
